@@ -34,7 +34,7 @@ public class GroupReportTest extends iTrustSeleniumTest {
 		gen.standardData();	
 		gen.uc47SetUp();
 		driver = new HtmlUnitDriver();
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	}
 
 

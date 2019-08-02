@@ -26,7 +26,7 @@ public class PendingApptTest extends iTrustSeleniumTest {
 		gen.standardData();
 		gen.pendingAppointmentAlert();
 		driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080";
+		baseUrl = BASE_URL + "";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 

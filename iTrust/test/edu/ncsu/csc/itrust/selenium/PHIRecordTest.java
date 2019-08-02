@@ -28,7 +28,7 @@ public class PHIRecordTest extends iTrustSeleniumTest{
     driver = new Driver();
     // Implicitly wait at most 2 seconds for each element to load
     driver.manage().timeouts().implicitlyWait(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
-    baseUrl = "http://localhost:8080";
+    baseUrl = BASE_URL + "";
   }
 
   @Test

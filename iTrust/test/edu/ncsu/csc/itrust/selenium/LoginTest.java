@@ -21,7 +21,7 @@ public class LoginTest extends iTrustSeleniumTest {
 	 * The URL for iTrust, change as needed
 	 */
 	/**ADDRESS*/
-	public static final String ADDRESS = "http://localhost:8080/iTrust/";
+
 
 	/**
 	 * Set up for testing.

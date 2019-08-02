@@ -22,7 +22,7 @@ public class SecurePasswordTest extends iTrustSeleniumTest{
 	  gen.clearAllTables();
 	  gen.standardData();	
 	  driver = new HtmlUnitDriver(BrowserVersion.INTERNET_EXPLORER_8);
-	  baseUrl = "http://localhost:8080/iTrust/";
+	  baseUrl = ADDRESS;
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	

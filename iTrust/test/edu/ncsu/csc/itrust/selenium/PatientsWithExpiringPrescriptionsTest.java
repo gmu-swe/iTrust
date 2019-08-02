@@ -39,7 +39,7 @@ public class PatientsWithExpiringPrescriptionsTest extends iTrustSeleniumTest {
 		gen.patient14();
 		
 		driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/iTrust/auth/forwardUser.jsp";
+		baseUrl = BASE_URL + "/iTrust/auth/forwardUser.jsp";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 

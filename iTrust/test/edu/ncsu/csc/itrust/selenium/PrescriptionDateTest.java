@@ -23,7 +23,7 @@ public class PrescriptionDateTest extends iTrustSeleniumTest {
 	}
 	
 	/**ADDRESS*/
-	public static final String ADDRESS = "http://localhost:8080/iTrust/";
+
 	
 	/**
 	 * testeditOVPPrescription

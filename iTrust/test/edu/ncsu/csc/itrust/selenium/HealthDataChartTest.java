@@ -32,7 +32,7 @@ public class HealthDataChartTest extends iTrustSeleniumTest {
 		gen.clearAllTables();
 		gen.standardData();	
 		driver = new HtmlUnitDriver();
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		
 	}
 

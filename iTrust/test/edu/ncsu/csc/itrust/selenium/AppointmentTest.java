@@ -66,7 +66,7 @@ public class AppointmentTest extends iTrustSeleniumTest{
 		//edit first entry to the desired time
 		element = driver.findElements(By.linkText("Edit/Remove")).get(7);
 		element.click();
-		assertTrue(driver.getCurrentUrl().contains("http://localhost:8080/iTrust/auth/hcp/editAppt.jsp"));
+		assertTrue(driver.getCurrentUrl().contains(BASE_URL + "/iTrust/auth/hcp/editAppt.jsp"));
 		c.add(Calendar.DATE, -5);
 		c.set(Calendar.HOUR, 10);
 		c.set(Calendar.AM_PM, Calendar.AM);

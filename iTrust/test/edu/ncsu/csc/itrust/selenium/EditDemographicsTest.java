@@ -37,7 +37,7 @@ public class EditDemographicsTest extends iTrustSeleniumTest {
 		
 		// choose Edit Patient
 		// choose patient 2
-		driver.get("http://localhost:8080/iTrust/" + "auth/getPatientID.jsp?UID_PATIENTID=2&forward=hcp-uap/editPatient.jsp");
+		driver.get(ADDRESS + "auth/getPatientID.jsp?UID_PATIENTID=2&forward=hcp-uap/editPatient.jsp");
 		assertEquals(ADDRESS + "auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
 		
 		// update email address to be blank
@@ -71,7 +71,7 @@ public class EditDemographicsTest extends iTrustSeleniumTest {
 		
 		// choose Edit Patient
 		// choose patient 2
-		driver.get("http://localhost:8080/iTrust/" + "auth/getPatientID.jsp?UID_PATIENTID=2&forward=hcp-uap/editPatient.jsp");
+		driver.get(ADDRESS + "auth/getPatientID.jsp?UID_PATIENTID=2&forward=hcp-uap/editPatient.jsp");
 		assertEquals(ADDRESS + "auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
 		
 		// update street address, city and zip code
@@ -106,7 +106,7 @@ public class EditDemographicsTest extends iTrustSeleniumTest {
 		
 		// choose Edit Patient
 		// choose patient 2
-		driver.get("http://localhost:8080/iTrust/" + "auth/getPatientID.jsp?UID_PATIENTID=2&forward=hcp-uap/editPatient.jsp");
+		driver.get(ADDRESS + "auth/getPatientID.jsp?UID_PATIENTID=2&forward=hcp-uap/editPatient.jsp");
 		assertEquals(ADDRESS + "auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
 		
 		// update email address to be blank
@@ -137,7 +137,7 @@ public class EditDemographicsTest extends iTrustSeleniumTest {
 		
 		// choose Edit Patient
 		// choose patient 2
-		driver.get("http://localhost:8080/iTrust/" + "auth/getPatientID.jsp?UID_PATIENTID=2&forward=hcp-uap/editPatient.jsp");
+		driver.get(ADDRESS + "auth/getPatientID.jsp?UID_PATIENTID=2&forward=hcp-uap/editPatient.jsp");
 		assertEquals(ADDRESS + "auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
 		
 		// update email address to be blank

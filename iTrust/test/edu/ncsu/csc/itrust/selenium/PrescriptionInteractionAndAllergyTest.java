@@ -27,7 +27,7 @@ public class PrescriptionInteractionAndAllergyTest extends iTrustSeleniumTest {
 
 	@Test
 	public void testNoAllergyPrescribe() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -63,7 +63,7 @@ public class PrescriptionInteractionAndAllergyTest extends iTrustSeleniumTest {
 
 	@Test
 	public void testAllergicPrescribe() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -103,7 +103,7 @@ public class PrescriptionInteractionAndAllergyTest extends iTrustSeleniumTest {
 
 	@Test
 	public void testPrescribeOverrideCancel() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -142,7 +142,7 @@ public class PrescriptionInteractionAndAllergyTest extends iTrustSeleniumTest {
 	@Test
 	public void testAllergicPrescribeTwice() throws Exception {
 
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -200,7 +200,7 @@ public class PrescriptionInteractionAndAllergyTest extends iTrustSeleniumTest {
 		gen.drugInteractions3();
 		gen.ORCodes();
 
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -261,7 +261,7 @@ public class PrescriptionInteractionAndAllergyTest extends iTrustSeleniumTest {
 		gen.drugInteractions3();
 		gen.ORCodes();
 
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -302,7 +302,7 @@ public class PrescriptionInteractionAndAllergyTest extends iTrustSeleniumTest {
 
 	@Test
 	public void testInteractionCancel() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -334,7 +334,7 @@ public class PrescriptionInteractionAndAllergyTest extends iTrustSeleniumTest {
 
 	@Test
 	public void testInteractionOverride() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");

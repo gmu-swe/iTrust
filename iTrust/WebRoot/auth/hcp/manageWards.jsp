@@ -274,7 +274,7 @@ if(searchHospitals != null || searchWards != null || searchStatus != null || for
 			<td><%=room.getStatus()%></td>
 			<td><%=wardDAO.getHospitalByWard(room.getRoomID() + "").getHospitalName() %></td>
 			<td>
-				<form id="mainForm" method="post" action=<%="http://localhost:8080/iTrust/auth/getPatientID.jsp?forward=hcp/manageWards.jsp?forwardPatientSearch=" + room.getRoomID() + "&searchHospitals=true"%> >				
+				<form id="mainForm" method="post" action=<%="/iTrust/auth/getPatientID.jsp?forward=hcp/manageWards.jsp?forwardPatientSearch=" + room.getRoomID() + "&searchHospitals=true"%> >
 					<input type="submit" value="Assign Patient" name="assignPatient" 
 					<%if(room.getOccupiedBy() != 0){%>
 					disabled 

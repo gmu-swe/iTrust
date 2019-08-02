@@ -23,7 +23,7 @@ public class EditPatientTest extends iTrustSeleniumTest {
 	  public void testCauseOfDeathValidation() throws Exception {
 		//set up for the start location and driver
 		WebDriver driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/iTrust/";
+		baseUrl = ADDRESS;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "auth/forwardUser.jsp");
 		
@@ -48,7 +48,7 @@ public class EditPatientTest extends iTrustSeleniumTest {
 	    driver.findElement(By.xpath("//input[@value='2']")).submit();
 	    try {
 	    	//check if it on the page correctly
-	      assertEquals("http://localhost:8080/iTrust/auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
+	      assertEquals(BASE_URL + "/iTrust/auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
 	    } catch (Error e) {
 	      verificationErrors.append(e.toString());
 	      fail();
@@ -72,7 +72,7 @@ public class EditPatientTest extends iTrustSeleniumTest {
 	  public void testViewDemographicsTest() throws Exception {
 		//set up for the start location and driver
 		WebDriver driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/iTrust/";
+		baseUrl = ADDRESS;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "auth/forwardUser.jsp");
 	
@@ -94,7 +94,7 @@ public class EditPatientTest extends iTrustSeleniumTest {
 	    driver.findElement(By.xpath("//input[@value='2']")).submit();
 	    //check if its on the correct page
 	    try {
-	      assertEquals("http://localhost:8080/iTrust/auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
+	      assertEquals(BASE_URL + "/iTrust/auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
 	    } catch (Error e) {
 	      verificationErrors.append(e.toString());
 	      fail();
@@ -126,7 +126,7 @@ public class EditPatientTest extends iTrustSeleniumTest {
 	  public void testMFWithPersonnelMID() throws Exception {
 		//set up for the start location and driver
 		WebDriver driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/iTrust/";
+		baseUrl = ADDRESS;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "auth/forwardUser.jsp");
 	
@@ -146,7 +146,7 @@ public class EditPatientTest extends iTrustSeleniumTest {
 	    driver.findElement(By.name("UID_PATIENTID")).sendKeys("2");
 	    driver.findElement(By.xpath("//input[@value='2']")).submit();
 	    try {
-	      assertEquals("http://localhost:8080/iTrust/auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
+	      assertEquals(BASE_URL + "/iTrust/auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
 	    } catch (Error e) {
 	      verificationErrors.append(e.toString());
 	      fail();
@@ -171,7 +171,7 @@ public class EditPatientTest extends iTrustSeleniumTest {
 	  public void testMisspellings() throws Exception {
 		//set up for the start location and driver
 		WebDriver driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/iTrust/";
+		baseUrl = ADDRESS;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "auth/forwardUser.jsp");
 
@@ -192,7 +192,7 @@ public class EditPatientTest extends iTrustSeleniumTest {
 	    driver.findElement(By.name("UID_PATIENTID")).sendKeys("2");
 	    driver.findElement(By.xpath("//input[@value='2']")).submit();
 	    try {
-	      assertEquals("http://localhost:8080/iTrust/auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
+	      assertEquals(BASE_URL + "/iTrust/auth/hcp-uap/editPatient.jsp", driver.getCurrentUrl());
 	    } catch (Error e) {
 	      verificationErrors.append(e.toString());
 	      fail();

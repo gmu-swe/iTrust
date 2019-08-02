@@ -18,7 +18,7 @@ public class ConsultationTest extends iTrustSeleniumTest{
 		driver = new HtmlUnitDriver();
 
 		// Navigate to desired web page
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	}
 	
 	@Test

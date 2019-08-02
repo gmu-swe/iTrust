@@ -18,7 +18,7 @@ public class PhysicianSatisfactionUseCaseTest extends iTrustSeleniumTest {
 	}
 	
 	/**ADDRESS*/
-	public static final String ADDRESS = "http://localhost:8080/iTrust/";
+
 	
 	/*
 	 * 	Preconditions: Patient 2 is in the system and has authenticated successfully. 

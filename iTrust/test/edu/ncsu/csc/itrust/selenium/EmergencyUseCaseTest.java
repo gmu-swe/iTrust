@@ -21,7 +21,7 @@ public class EmergencyUseCaseTest extends iTrustSeleniumTest {
 	  public void testERViewEmergencyReport1() throws Exception {
 		//set up for the start location and driver
 		WebDriver driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/iTrust/";
+		baseUrl = ADDRESS;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "auth/forwardUser.jsp");
 		
@@ -59,7 +59,7 @@ public class EmergencyUseCaseTest extends iTrustSeleniumTest {
 	  @Test
 	  public void testHCPViewEmergencyReport1() throws Exception {
 		WebDriver driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/iTrust/";
+		baseUrl = ADDRESS;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "auth/forwardUser.jsp");
 	    driver.findElement(By.id("j_username")).clear();
@@ -86,7 +86,7 @@ public class EmergencyUseCaseTest extends iTrustSeleniumTest {
 	  @Test
 	  public void testHCPViewEmergencyReport2() throws Exception {
 		WebDriver driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/iTrust/";
+		baseUrl = ADDRESS;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(baseUrl + "auth/forwardUser.jsp");
 	    driver.findElement(By.id("j_username")).clear();

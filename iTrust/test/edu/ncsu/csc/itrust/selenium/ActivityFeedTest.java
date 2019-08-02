@@ -134,7 +134,7 @@ public class ActivityFeedTest extends iTrustSeleniumTest {
 		assertEquals("iTrust - Edit Basic Health Record", driver.getTitle());
 		
 		//logout
-		driver.get("http://localhost:8080/iTrust/logout.jsp");
+		driver.get(BASE_URL + "/iTrust/logout.jsp");
 		assertEquals("iTrust - Login", driver.getTitle());
 		
 		//Login
@@ -160,7 +160,7 @@ public class ActivityFeedTest extends iTrustSeleniumTest {
 		assertTrue(driver.getPageSource().contains("Information Successfully Updated"));
 		
 		//Let's manually logout
-		driver.get("http://localhost:8080/iTrust/logout.jsp");
+		driver.get(BASE_URL + "/iTrust/logout.jsp");
 		assertEquals("iTrust - Login", driver.getTitle());
 		
 		//Login
@@ -199,7 +199,7 @@ public class ActivityFeedTest extends iTrustSeleniumTest {
 		((HtmlUnitDriver) driver).setJavascriptEnabled(false);
 		
 		//Go to homepage
-		driver.get("http://localhost:8080/iTrust/logout.jsp");
+		driver.get(BASE_URL + "/iTrust/logout.jsp");
 		driver = login("21", "pw");
 		assertEquals("iTrust - Patient Home", driver.getTitle());
 		

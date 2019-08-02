@@ -34,7 +34,7 @@ public class GetVisitRemindersTest extends iTrustSeleniumTest {
 		driver = new Driver();
 		// Implicitly wait at most 2 seconds for each element to load
 		driver.manage().timeouts().implicitlyWait(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	}
 
 	/*

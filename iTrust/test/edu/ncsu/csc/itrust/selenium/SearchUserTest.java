@@ -24,7 +24,7 @@ public class SearchUserTest extends iTrustSeleniumTest{
 	  gen.clearAllTables();
 	  gen.standardData();	
 	  driver = new HtmlUnitDriver(BrowserVersion.FIREFOX_3_6);
-	  baseUrl = "http://localhost:8080/iTrust/";
+	  baseUrl = ADDRESS;
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  driver.setJavascriptEnabled(true);
 

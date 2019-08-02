@@ -28,7 +28,7 @@ public class PersonalHealthRecordsUseCaseTest extends iTrustSeleniumTest {
 		gen.clearAllTables();
 		gen.standardData();
 		driver = new Driver();
-		baseUrl = "http://localhost:8080";
+		baseUrl = BASE_URL;
 		driver.manage().timeouts().implicitlyWait(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
 	}
 

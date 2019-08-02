@@ -34,7 +34,7 @@ public class ReportAdverseImmuEventTest extends iTrustSeleniumTest {
 @Test
   public void testReport() throws Exception {
 	
-	driver.get("http://localhost:8080/iTrust/");
+	driver.get(ADDRESS);
 	driver.findElement(By.id("j_username")).sendKeys("1");
     driver.findElement(By.id("j_password")).clear();
     driver.findElement(By.id("j_password")).sendKeys("pw");

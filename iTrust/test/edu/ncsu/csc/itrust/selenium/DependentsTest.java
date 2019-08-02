@@ -11,7 +11,7 @@ import edu.ncsu.csc.itrust.enums.TransactionType;
 
 public class DependentsTest extends iTrustSeleniumTest {
 
-	public static final String ADDRESS = "http://localhost:8080/iTrust/auth/hcp-uap/addPatient.jsp";
+	public static final String ADDRESS = BASE_URL + "/iTrust/auth/hcp-uap/addPatient.jsp";
 
 	@Override
 	protected void setUp() throws Exception {
@@ -65,7 +65,7 @@ public class DependentsTest extends iTrustSeleniumTest {
 
 		// Try to log in (dependents can't).
 		WebDriver driver = new HtmlUnitDriver();
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 
 		WebElement elem = driver.findElement(By.name("j_username"));
 		elem.sendKeys("580");

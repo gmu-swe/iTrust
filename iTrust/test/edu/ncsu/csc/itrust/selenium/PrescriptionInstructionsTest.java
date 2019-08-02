@@ -9,7 +9,7 @@ import edu.ncsu.csc.itrust.enums.TransactionType;
 
 public class PrescriptionInstructionsTest extends iTrustSeleniumTest {
 	
-	public static final String ADDRESS = "http://localhost:8080/iTrust/";
+
 	
 	protected void setUp() throws Exception {
 		super.setUp();

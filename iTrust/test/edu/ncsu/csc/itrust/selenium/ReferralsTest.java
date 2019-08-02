@@ -30,7 +30,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 		gen.standardData();
 		driver = new HtmlUnitDriver();
 		//navigating to iTrust home page
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	}
 	
 	/*
@@ -38,7 +38,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	 */
 	@Test
 	public void testCreateNewReferral() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 	    driver.findElement(By.id("j_password")).clear();
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -77,7 +77,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	@Test
 	public void testDeleteExistingReferral() throws Exception {
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	    driver.findElement(By.id("j_username")).sendKeys("9000000000");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -99,7 +99,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	@Test
 	public void testModifyExistingReferral() throws Exception {
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 	    driver.findElement(By.id("j_password")).clear();
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -129,7 +129,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	 */
 	@Test
 	public void testHCPViewSentReferrals() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	    driver.findElement(By.id("j_username")).sendKeys("9000000003");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -161,7 +161,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	 */
 	@Test
 	public void testHPCViewReferralsEdit() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000003");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -183,7 +183,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	@Test
 	public void testPatientViewReferralsWithDetails() throws Exception {
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("2");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -206,7 +206,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	@Test
 	public void testPatientSendsMessageToReceivingHCP() throws Exception {
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("2");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -223,7 +223,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	@Test
 	public void testHCPViewsReferralsList() throws Exception {
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000003");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -243,7 +243,7 @@ public class ReferralsTest extends iTrustSeleniumTest {
 	@Test
 	public void testHCPViewOVFromReferral() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000003");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();

@@ -1,19 +1,20 @@
 package edu.ncsu.csc.itrust.unit.testutils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.sql.Connection;
-import java.sql.SQLException;
+import edu.ncsu.csc.itrust.dao.DAOFactory;
+import edu.ncsu.csc.itrust.dao.IConnectionDriver;
+//import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
-import org.w3c.dom.Document;
-import org.xml.sax.InputSource;
-import edu.ncsu.csc.itrust.dao.DAOFactory;
-import edu.ncsu.csc.itrust.dao.IConnectionDriver;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * This class pulls the JDBC driver information from Tomcat's context.xml file in
@@ -37,38 +38,38 @@ public class TestDAOFactory extends DAOFactory implements IConnectionDriver {
 		return testInstance;
 	}
 
-	private BasicDataSource dataSource;
-
-	private TestDAOFactory() {
-		try {
-			Document document = parseXML(new BufferedReader(new FileReader("WebRoot/META-INF/context.xml")));
-			dataSource = new BasicDataSource();
-			dataSource.setDriverClassName(getAttribute(document, "@driverClassName"));
-			dataSource.setUsername(getAttribute(document, "@username"));
-			dataSource.setPassword(getAttribute(document, "@password"));
-			dataSource.setUrl(getAttribute(document, "@url"));
-			dataSource.setMaxActive(3); // only allow three connections open at a time
-			dataSource.setMaxWait(250); // wait 250ms until throwing an exception
-			dataSource.setPoolPreparedStatements(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	private String getAttribute(Document document, String attribute) throws XPathExpressionException {
-		return (String) XPathFactory.newInstance().newXPath().compile("/Context/Resource/" + attribute)
-				.evaluate(document.getDocumentElement(), XPathConstants.STRING);
-	}
-
-	private Document parseXML(BufferedReader reader) throws Exception {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setValidating(false);
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		return builder.parse(new InputSource(reader));
-	}
-
-	@Override
-	public Connection getConnection() throws SQLException {
-		return dataSource.getConnection();
-	}
+//	private BasicDataSource dataSource;
+//
+//	private TestDAOFactory() {
+//		try {
+//			Document document = parseXML(new BufferedReader(new FileReader("WebRoot/META-INF/context.xml")));
+//			dataSource = new BasicDataSource();
+//			dataSource.setDriverClassName(getAttribute(document, "@driverClassName"));
+//			dataSource.setUsername(System.getProperty("mysql.username", getAttribute(document, "@username")));
+//			dataSource.setPassword(System.getProperty("mysql.password", getAttribute(document, "@password")));
+//			dataSource.setUrl(System.getProperty("mysql.url", getAttribute(document, "@url")));
+//			dataSource.setMaxActive(3); // only allow three connections open at a time
+//			dataSource.setMaxWait(250); // wait 250ms until throwing an exception
+//			dataSource.setPoolPreparedStatements(true);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	private String getAttribute(Document document, String attribute) throws XPathExpressionException {
+//		return (String) XPathFactory.newInstance().newXPath().compile("/Context/Resource/" + attribute)
+//				.evaluate(document.getDocumentElement(), XPathConstants.STRING);
+//	}
+//
+//	private Document parseXML(BufferedReader reader) throws Exception {
+//		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+//		factory.setValidating(false);
+//		DocumentBuilder builder = factory.newDocumentBuilder();
+//		return builder.parse(new InputSource(reader));
+//	}
+//
+//	@Override
+//	public Connection getConnection() throws SQLException {
+//		return dataSource.getConnection();
+//	}
 }

@@ -36,7 +36,7 @@ public class ImmunizationUseCasesTest extends iTrustSeleniumTest {
 		gen.clearAllTables();
 		gen.standardData();	
 		driver = new HtmlUnitDriver();
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	}
 
 	/*
@@ -191,7 +191,7 @@ public class ImmunizationUseCasesTest extends iTrustSeleniumTest {
 		assertTrue(element.getText().contains("90696"));
 		
 		driver.findElement(By.cssSelector("a[href='javascript:removeImmID('3011');']")).submit();
-		driver.navigate().to("http://localhost:8080/iTrust/auth/hcp-uap/editOfficeVisit.jsp");
+		driver.navigate().to(BASE_URL + "/iTrust/auth/hcp-uap/editOfficeVisit.jsp");
 		
 		element = driver.findElement(By.id("immunizationsTable"));
 		assertTrue(element.getText().contains("No immunizations on record"));

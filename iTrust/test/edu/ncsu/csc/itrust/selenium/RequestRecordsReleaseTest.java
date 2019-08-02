@@ -28,7 +28,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 		gen.standardData();
 		driver = new HtmlUnitDriver();
 		//go to iTrust home page
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	}
 
 	
@@ -37,7 +37,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	 * Adding new record using patient 102 
 	 */
 	public void testPatientRequestNewRecordsRelease() throws Exception{
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("102");
 		driver.findElement(By.id("j_password")).sendKeys("pw");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -72,7 +72,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	 */
 	public void testMedicalRecordsRelease_Patient_NoSignature() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("102");
 		driver.findElement(By.id("j_password")).sendKeys("pw");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -104,7 +104,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	 */
 	public void testMedicalRecordsRelease_Patient_NotAllFields() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("102");
 		driver.findElement(By.id("j_password")).sendKeys("pw");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -126,7 +126,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	 */
 	public void testPatientViewApprovedRequest() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("102");
 		driver.findElement(By.id("j_password")).sendKeys("pw");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -152,7 +152,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	@Test
 	public void testHCPApprovesRequest() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -172,7 +172,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	@Test
 	public void testHCPDeniesRequest() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 	    driver.findElement(By.id("j_password")).sendKeys("pw");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -192,7 +192,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	@Test
 	public void testUAPDeniesRequest() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("8000000009");
 	    driver.findElement(By.id("j_password")).sendKeys("uappass1");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -212,7 +212,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	@Test
 	public void testUAPViewsApprovedRequest() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	    driver.findElement(By.id("j_username")).sendKeys("8000000009");
 	    driver.findElement(By.id("j_password")).sendKeys("uappass1");
 	    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
@@ -233,7 +233,7 @@ public class RequestRecordsReleaseTest extends iTrustSeleniumTest {
 	@Test
 	public void testInvalidInputSQLInjection() throws Exception{
 		
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("102");
 		driver.findElement(By.id("j_password")).sendKeys("pw");
 		driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();

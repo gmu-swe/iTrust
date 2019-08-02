@@ -11,7 +11,7 @@ public class NDCodeTest extends iTrustSeleniumTest {
 	 * The URL for iTrust, change as needed
 	 */
 	/**ADDRESS*/
-	public static final String ADDRESS = "http://localhost:8080/iTrust/";
+
 	private WebDriver driver;
 
 	@Override

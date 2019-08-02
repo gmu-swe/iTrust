@@ -18,7 +18,7 @@ public class PersonnelTest extends iTrustSeleniumTest {
 	}
 	
 	/**ADDRESS*/
-	public static final String ADDRESS = "http://localhost:8080/iTrust/";
+
 	
 	/**
 	 * testViewPrescriptionRecords

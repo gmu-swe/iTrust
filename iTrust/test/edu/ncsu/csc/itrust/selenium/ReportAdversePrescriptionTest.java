@@ -21,7 +21,7 @@ public class ReportAdversePrescriptionTest extends iTrustSeleniumTest {
 		gen.patient2();
 		gen.patient1();
 		driver = new HtmlUnitDriver();
-		baseUrl = "http://localhost:8080/";
+		baseUrl = BASE_URL + "/";
 		driver.get(baseUrl);
 		driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
 	}

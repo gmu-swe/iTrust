@@ -13,7 +13,7 @@ public class InsuranceNotificationTest extends iTrustSeleniumTest {
 	 * The URL for iTrust, change as needed
 	 */
 	/**ADDRESS*/
-	public static final String ADDRESS = "http://localhost:8080/iTrust/";
+
 	private WebDriver driver;
 	//MIDs for various people.
 	private static final long JOHN_SMITH = 313;

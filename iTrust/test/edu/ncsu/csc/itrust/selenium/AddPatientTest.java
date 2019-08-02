@@ -94,7 +94,7 @@ public class AddPatientTest extends iTrustSeleniumTest{
 	public void testPreRegisteredPatient() throws Exception {
 		WebDriver htmlDriver = new Driver();
 		htmlDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		htmlDriver.get("http://localhost:8080/iTrust/");
+		htmlDriver.get(ADDRESS);
 
 		//Click the pre-register link
 		htmlDriver.findElement(By.linkText("Pre-Register")).click();

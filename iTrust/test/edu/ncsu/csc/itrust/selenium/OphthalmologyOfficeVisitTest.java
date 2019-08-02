@@ -332,7 +332,7 @@ public class OphthalmologyOfficeVisitTest extends iTrustSeleniumTest{
 		
 		//Simulate the change
 		//First logout
-		driver.get("http://localhost:8080/iTrust/logout.jsp");
+		driver.get(BASE_URL + "/iTrust/logout.jsp");
 		assertEquals("iTrust - Login", driver.getTitle());
 		
 		//Then basically rerun the code for UC83 Acceptance Test 4
@@ -367,7 +367,7 @@ public class OphthalmologyOfficeVisitTest extends iTrustSeleniumTest{
 		assertLogged(TransactionType.EDIT_OPHTHALMOLOGY_OV, 9000000085L, 408L, "");
 		
 		//Then logout
-		driver.get("http://localhost:8080/iTrust/logout.jsp");
+		driver.get(BASE_URL + "/iTrust/logout.jsp");
 		assertEquals("iTrust - Login", driver.getTitle());
 		
 		//Re-Login as Freya Chandler

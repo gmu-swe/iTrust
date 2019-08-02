@@ -29,7 +29,7 @@ public class PrescriptionRefactoringUseCaseTest extends iTrustSeleniumTest {
 
 	@Test
 	public void testAcceptanceScenario1() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000004");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -78,7 +78,7 @@ public class PrescriptionRefactoringUseCaseTest extends iTrustSeleniumTest {
 
 	@Test
 	public void testAcceptanceScenario2() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -124,7 +124,7 @@ public class PrescriptionRefactoringUseCaseTest extends iTrustSeleniumTest {
 	 */
 	@Test
 	public void testAcceptanceScenario3() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -161,7 +161,7 @@ public class PrescriptionRefactoringUseCaseTest extends iTrustSeleniumTest {
 	}
 
 	public void testAcceptanceScenario4() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -196,7 +196,7 @@ public class PrescriptionRefactoringUseCaseTest extends iTrustSeleniumTest {
 	@Test
 	public void testAcceptanceScenario5() throws Exception {
 		gen.hcp5();
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000005");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -236,7 +236,7 @@ public class PrescriptionRefactoringUseCaseTest extends iTrustSeleniumTest {
 
 	public void testEditPrescriptionLogging() throws Exception {
 
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -263,7 +263,7 @@ public class PrescriptionRefactoringUseCaseTest extends iTrustSeleniumTest {
 	}
 
 	public void testIllegalCharacters() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");
@@ -289,7 +289,7 @@ public class PrescriptionRefactoringUseCaseTest extends iTrustSeleniumTest {
 
 	@Test
 	public void testPrescriptionNoInstructions() throws Exception {
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 		driver.findElement(By.id("j_username")).sendKeys("9000000000");
 		driver.findElement(By.id("j_password")).clear();
 		driver.findElement(By.id("j_password")).sendKeys("pw");

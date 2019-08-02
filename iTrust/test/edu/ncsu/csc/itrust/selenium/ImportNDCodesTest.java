@@ -31,7 +31,7 @@ public class ImportNDCodesTest extends iTrustSeleniumTest {
 		gen.clearAllTables();
 		gen.admin1();
 		driver = new HtmlUnitDriver();
-		driver.get("http://localhost:8080/iTrust/");
+		driver.get(ADDRESS);
 	}
 		
 	/*

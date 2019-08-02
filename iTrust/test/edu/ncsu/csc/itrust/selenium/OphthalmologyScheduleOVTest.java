@@ -137,7 +137,7 @@ public class OphthalmologyScheduleOVTest  extends iTrustSeleniumTest{
 		assertTrue(driver.getPageSource().contains("My eyes hurt"));
 		
 		//Then logout
-		driver.get("http://localhost:8080/iTrust/logout.jsp");
+		driver.get(BASE_URL + "/iTrust/logout.jsp");
 		assertEquals("iTrust - Login", driver.getTitle());
 		
 		//Login as Brody Franco
@@ -211,7 +211,7 @@ public class OphthalmologyScheduleOVTest  extends iTrustSeleniumTest{
 		assertTrue(driver.getPageSource().contains("My eyes hurt"));
 		
 		//Then logout
-		driver.get("http://localhost:8080/iTrust/logout.jsp");
+		driver.get(BASE_URL + "/iTrust/logout.jsp");
 		assertEquals("iTrust - Login", driver.getTitle());
 		
 		//Login as Brody Franco
