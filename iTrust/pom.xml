@@ -74,6 +74,7 @@
         </configuration>
       </plugin>
 		<!-- Unpack MySQL -->
+		<!--
 		<plugin>
 			<artifactId>maven-dependency-plugin</artifactId>
 			<executions>
@@ -99,7 +100,6 @@
 				</execution>
 			</executions>
 		</plugin>
-		<!-- start MySQL -->
 		<plugin>
 			<groupId>com.jcabi</groupId>
 			<artifactId>jcabi-mysql-maven-plugin</artifactId>
@@ -123,6 +123,7 @@
 				</execution>
 			</executions>
 		</plugin>
+		-->
       <plugin>
       	<groupId>org.codehaus.mojo</groupId>
     	<artifactId>exec-maven-plugin</artifactId>
@@ -262,39 +263,41 @@
     </plugins>
   </build>
   <dependencies>
-	<dependency>
-	    <groupId>org.apache.tomcat</groupId>
-	    <artifactId>tomcat</artifactId>
-	    <version>${tomcat.version}</version>
-	    <type>pom</type>
-	</dependency>
-	  <dependency>
-		  <groupId>org.apache.tomcat</groupId>
-		  <artifactId>tomcat-util</artifactId>
-		  <version>${tomcat.version}</version>
-	  </dependency>
+<!--	<dependency>-->
+<!--	    <groupId>org.apache.tomcat</groupId>-->
+<!--	    <artifactId>tomcat</artifactId>-->
+<!--	    <version>${tomcat.version}</version>-->
+<!--	    <type>pom</type>-->
+<!--	</dependency>-->
+<!--	  <dependency>-->
+<!--		  <groupId>org.apache.tomcat</groupId>-->
+<!--		  <artifactId>tomcat-util</artifactId>-->
+<!--		  <version>${tomcat.version}</version>-->
+<!--	  </dependency>-->
 	  <dependency>
 		  <groupId>org.apache.tomcat</groupId>
 		  <artifactId>tomcat-jasper</artifactId>
 		  <version>${tomcat.version}</version>
+          <scope>test</scope>
 	  </dependency>
 	  <dependency>
 		  <groupId>org.apache.tomcat</groupId>
 		  <artifactId>tomcat-dbcp</artifactId>
 		  <version>${tomcat.version}</version>
+          <scope>test</scope>
 	  </dependency>
-	  <dependency>
-		  <groupId>org.apache.tomcat.embed</groupId>
-		  <artifactId>tomcat-embed-core</artifactId>
-		  <version>${tomcat.version}</version>
-		  <scope>test</scope>
-	  </dependency>
-	  <dependency>
-		  <groupId>org.apache.tomcat.embed</groupId>
-		  <artifactId>tomcat-embed-jasper</artifactId>
-		  <version>${tomcat.version}</version>
-		  <scope>test</scope>
-	  </dependency>
+<!--	  <dependency>-->
+<!--		  <groupId>org.apache.tomcat.embed</groupId>-->
+<!--		  <artifactId>tomcat-embed-core</artifactId>-->
+<!--		  <version>${tomcat.version}</version>-->
+<!--		  <scope>test</scope>-->
+<!--	  </dependency>-->
+<!--	  <dependency>-->
+<!--		  <groupId>org.apache.tomcat.embed</groupId>-->
+<!--		  <artifactId>tomcat-embed-jasper</artifactId>-->
+<!--		  <version>${tomcat.version}</version>-->
+<!--		  <scope>test</scope>-->
+<!--	  </dependency>-->
   	<dependency>
   		<groupId>org.seleniumhq.selenium</groupId>
   		<artifactId>selenium-java</artifactId>
@@ -524,26 +527,26 @@
 		<artifactId>easymockclassextension</artifactId>
 		<version>2.5.2</version>
 	</dependency>
-	<dependency>
-	    <groupId>org.apache.tomcat</groupId>
-	    <artifactId>tomcat-util</artifactId>
-	    <version>9.0.0.M9</version>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.tomcat</groupId>
-	    <artifactId>tomcat-juli</artifactId>
-	    <version>9.0.0.M9</version>
-	</dependency>		
+<!--	<dependency>-->
+<!--	    <groupId>org.apache.tomcat</groupId>-->
+<!--	    <artifactId>tomcat-util</artifactId>-->
+<!--	    <version>${tomcat.version}</version>-->
+<!--	</dependency>-->
+<!--	<dependency>-->
+<!--	    <groupId>org.apache.tomcat</groupId>-->
+<!--	    <artifactId>tomcat-juli</artifactId>-->
+<!--	    <version>${tomcat.version}</version>-->
+<!--	</dependency>		-->
 <!--	<dependency>-->
 <!--		<groupId>tomcat</groupId>-->
 <!--		<artifactId>jasper-runtime</artifactId>-->
 <!--		<version>5.5.23</version>-->
 <!--	</dependency>-->
-	<dependency>
-	    <groupId>org.apache.tomcat</groupId>
-	    <artifactId>tomcat-dbcp</artifactId>
-	    <version>9.0.0.M9</version>
-	</dependency>
+<!--	<dependency>-->
+<!--	    <groupId>org.apache.tomcat</groupId>-->
+<!--	    <artifactId>tomcat-dbcp</artifactId>-->
+<!--	    <version>${tomcat.version}</version>-->
+<!--	</dependency>-->
 	<dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
@@ -617,7 +620,7 @@
 	</dependency>
   </dependencies>
   <properties>
-	  <tomcat.version>9.0.0.M9</tomcat.version>
+	  <tomcat.version>9.0.19</tomcat.version>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
