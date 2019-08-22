@@ -73,6 +73,56 @@
           <warSourceDirectory>WebRoot</warSourceDirectory>
         </configuration>
       </plugin>
+		<!-- Unpack MySQL -->
+		<plugin>
+			<artifactId>maven-dependency-plugin</artifactId>
+			<executions>
+				<execution>
+					<goals>
+						<goal>unpack</goal>
+					</goals>
+					<configuration>
+						<artifactItems>
+							<artifactItem>
+								<groupId>com.jcabi</groupId>
+								<artifactId>mysql-dist</artifactId>
+								<version>5.6.14</version>
+								<classifier>${mysql.classifier}</classifier>
+								<type>zip</type>
+								<overWrite>false</overWrite>
+								<outputDirectory>
+									${project.build.directory}/mysql-dist
+								</outputDirectory>
+							</artifactItem>
+						</artifactItems>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+		<!-- start MySQL -->
+		<plugin>
+			<groupId>com.jcabi</groupId>
+			<artifactId>jcabi-mysql-maven-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>mysql-test</id>
+					<goals>
+						<goal>classify</goal>
+						<goal>start</goal>
+						<goal>stop</goal>
+					</goals>
+					<configuration>
+						<port>${mysql.port}</port>
+						<data>${project.build.directory}/mysql-data</data>
+						<socket>/tmp/junit-ifc-mysql.sock</socket>
+						<options>
+							<option>default-time-zone=+00:00</option>
+						</options>
+						<clearexistingdata>false</clearexistingdata>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
       <plugin>
       	<groupId>org.codehaus.mojo</groupId>
     	<artifactId>exec-maven-plugin</artifactId>
@@ -80,7 +130,7 @@
     	<executions>
     		<execution>
     			<id>BuildDB</id>
-    			<phase>process-test-classes</phase>
+    			<phase>pre-integration-test</phase>
     			<goals>
     				<goal>java</goal>
     			</goals>
@@ -92,7 +142,7 @@
     		</execution>
     		<execution>
     			<id>GenerateTestData</id>
-    			<phase>process-test-classes</phase>
+    			<phase>pre-integration-test</phase>
     			<goals>
     				<goal>java</goal>
     			</goals>
@@ -104,49 +154,50 @@
     		</execution>
     	</executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.tomcat.maven</groupId>
-        <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>2.2</version>
-        <configuration>
-          <url>http://localhost:8080/manager/text</url>
-          <server>tomcat</server>
-          <path>/iTrust</path>
-        </configuration>
-        <executions>
-        	<execution>
-        		<phase>pre-integration-test</phase>
-        		<goals>
-        			<goal>redeploy</goal>
-        		</goals>
-        	</execution>
-        </executions>
-      </plugin>
-      <plugin>
-      	<groupId>org.jacoco</groupId>
-      	<artifactId>jacoco-maven-plugin</artifactId>
-      	<version>0.7.8</version>
-      	<executions>
-  			<execution>
-   				<id>jacoco-initialize</id>
-    				<goals>
-      					<goal>prepare-agent</goal>
-    				</goals>
-  			</execution>
-  			<execution>
-    			<id>jacoco-site</id>
-    				<phase>package</phase>
-    				<goals>
-      					<goal>report</goal>
-    				</goals>
-  			</execution>
-		</executions>
-      </plugin>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.tomcat.maven</groupId>-->
+<!--        <artifactId>tomcat7-maven-plugin</artifactId>-->
+<!--        <version>2.2</version>-->
+<!--        <configuration>-->
+<!--          <url>http://localhost:8080/manager/text</url>-->
+<!--          <server>tomcat</server>-->
+<!--          <path>/iTrust</path>-->
+<!--        </configuration>-->
+<!--        <executions>-->
+<!--        	<execution>-->
+<!--        		<phase>pre-integration-test</phase>-->
+<!--        		<goals>-->
+<!--        			<goal>redeploy</goal>-->
+<!--        		</goals>-->
+<!--        	</execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
+<!--      <plugin>-->
+<!--      	<groupId>org.jacoco</groupId>-->
+<!--      	<artifactId>jacoco-maven-plugin</artifactId>-->
+<!--      	<version>0.7.8</version>-->
+<!--      	<executions>-->
+<!--  			<execution>-->
+<!--   				<id>jacoco-initialize</id>-->
+<!--    				<goals>-->
+<!--      					<goal>prepare-agent</goal>-->
+<!--    				</goals>-->
+<!--  			</execution>-->
+<!--  			<execution>-->
+<!--    			<id>jacoco-site</id>-->
+<!--    				<phase>package</phase>-->
+<!--    				<goals>-->
+<!--      					<goal>report</goal>-->
+<!--    				</goals>-->
+<!--  			</execution>-->
+<!--		</executions>-->
+<!--      </plugin>-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.19</version>
         	<configuration>
+				<skip>true</skip>
                 <excludes>
                     <exclude>**/selenium/**/*.java</exclude>
                 	<exclude>**/cucumber/**/*.java</exclude>
@@ -162,6 +213,25 @@
       				<include>**/selenium/**/*.java</include>
       				<include>**/cucumber/**/*.java</include>
       			</includes>
+				<systemProperties>
+					<property>
+						<!-- Move derby.log and database to build directory -->
+						<name>derby.stream.error.file</name>
+						<value>${project.build.directory}/derby.log</value>
+					</property>
+					<property>
+						<name>derby.system.home</name>
+						<value>${project.build.directory}/db</value>
+					</property>
+					<property>
+						<name>tomcat.base.directory</name>
+						<value>${project.build.directory}/tomcat</value>
+					</property>
+					<property>
+						<name>webapps.base.directory</name>
+						<value>${project.build.directory}/webapps</value>
+					</property>
+				</systemProperties>
       		</configuration>
       	<executions>
       		<execution>
@@ -195,9 +265,36 @@
 	<dependency>
 	    <groupId>org.apache.tomcat</groupId>
 	    <artifactId>tomcat</artifactId>
-	    <version>9.0.0.M9</version>
+	    <version>${tomcat.version}</version>
 	    <type>pom</type>
 	</dependency>
+	  <dependency>
+		  <groupId>org.apache.tomcat</groupId>
+		  <artifactId>tomcat-util</artifactId>
+		  <version>${tomcat.version}</version>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.apache.tomcat</groupId>
+		  <artifactId>tomcat-jasper</artifactId>
+		  <version>${tomcat.version}</version>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.apache.tomcat</groupId>
+		  <artifactId>tomcat-dbcp</artifactId>
+		  <version>${tomcat.version}</version>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.apache.tomcat.embed</groupId>
+		  <artifactId>tomcat-embed-core</artifactId>
+		  <version>${tomcat.version}</version>
+		  <scope>test</scope>
+	  </dependency>
+	  <dependency>
+		  <groupId>org.apache.tomcat.embed</groupId>
+		  <artifactId>tomcat-embed-jasper</artifactId>
+		  <version>${tomcat.version}</version>
+		  <scope>test</scope>
+	  </dependency>
   	<dependency>
   		<groupId>org.seleniumhq.selenium</groupId>
   		<artifactId>selenium-java</artifactId>
@@ -437,11 +534,11 @@
 	    <artifactId>tomcat-juli</artifactId>
 	    <version>9.0.0.M9</version>
 	</dependency>		
-	<dependency>
-		<groupId>tomcat</groupId>
-		<artifactId>jasper-runtime</artifactId>
-		<version>5.5.23</version>
-	</dependency>
+<!--	<dependency>-->
+<!--		<groupId>tomcat</groupId>-->
+<!--		<artifactId>jasper-runtime</artifactId>-->
+<!--		<version>5.5.23</version>-->
+<!--	</dependency>-->
 	<dependency>
 	    <groupId>org.apache.tomcat</groupId>
 	    <artifactId>tomcat-dbcp</artifactId>
@@ -520,6 +617,7 @@
 	</dependency>
   </dependencies>
   <properties>
+	  <tomcat.version>9.0.0.M9</tomcat.version>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
