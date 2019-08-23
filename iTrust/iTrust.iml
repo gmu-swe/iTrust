@@ -27,6 +27,17 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-util:9.0.19" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-juli:9.0.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tomcat:tomcat-jasper:9.0.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tomcat:tomcat-servlet-api:9.0.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tomcat:tomcat-jsp-api:9.0.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tomcat:tomcat-el-api:9.0.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jdt:ecj:3.16.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tomcat:tomcat-jasper-el:9.0.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tomcat:tomcat-api:9.0.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tomcat:tomcat-util-scan:9.0.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tomcat:tomcat-dbcp:9.0.19" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-java:2.45.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:2.45.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-htmlunit-driver:2.45.0" level="project" />
@@ -120,11 +131,6 @@
     <orderEntry type="library" name="Maven: org.easymock:easymock:2.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.easymock:easymockclassextension:2.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.objenesis:objenesis:1.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-util:9.0.0.M9" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-juli:9.0.0.M9" level="project" />
-    <orderEntry type="library" name="Maven: tomcat:jasper-runtime:5.5.23" level="project" />
-    <orderEntry type="library" name="Maven: commons-el:commons-el:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-dbcp:9.0.0.M9" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.37" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Maven: info.cukes:cucumber-java:1.2.4" level="project" />
