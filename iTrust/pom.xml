@@ -210,9 +210,10 @@
       	<artifactId>maven-failsafe-plugin</artifactId>
       	<version>2.19</version>
       		<configuration>
+				<runOrder>alphabetical</runOrder>
       			<includes>
       				<include>**/selenium/**/*.java</include>
-      				<include>**/cucumber/**/*.java</include>
+      				<!--<include>**/cucumber/**/*.java</include>-->
       			</includes>
 				<systemProperties>
 					<property>
@@ -246,7 +247,7 @@
       <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.0.4</version>
           <configuration>
           	<includeTests>true</includeTests>
           	<excludeFilterFile>findbugs.xml</excludeFilterFile>
