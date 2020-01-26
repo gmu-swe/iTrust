@@ -213,7 +213,7 @@
 				<runOrder>alphabetical</runOrder>
       			<includes>
       				<include>**/selenium/**/*.java</include>
-      				<!--<include>**/cucumber/**/*.java</include>-->
+      				<include>**/cucumber/**/*.java</include>
       			</includes>
 				<systemProperties>
 					<property>
